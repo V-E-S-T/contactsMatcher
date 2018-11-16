@@ -6,9 +6,10 @@ import org.springframework.stereotype.Service;
 import repository.ContactRepo;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 @Service
-public class ContactsServiceImpl {
+public class ContactsServiceImpl implements ContactsService{
 
 
     @Autowired
@@ -17,5 +18,12 @@ public class ContactsServiceImpl {
     public List<Contact> getContactsBetween(int beginId, int endId){
 
         return contactRepo.findAllByIdIsBetween(beginId, endId);
+    }
+
+    @Override
+    public List<Contact> findMatchesContacts(int page, Predicate<Contact> filter) {
+
+
+        return null;
     }
 }

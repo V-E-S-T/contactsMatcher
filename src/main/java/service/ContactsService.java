@@ -2,9 +2,11 @@ package service;
 
 import model.Contact;
 
+
 import java.util.List;
+import java.util.function.Predicate;
 
 public interface ContactsService {
 
-    List<Contact> findAllByIdIsBetween(int beginId, int endId);
+    List<Contact> findMatchesContacts(int page, Predicate<Contact> filter);
 }
